@@ -12,3 +12,7 @@ Following is our class summary:
 - 6) I will send you the upcoming class details.
 - 7) We will follow the Udemy section-2 from basic of command line in class-2
 - 8) You setup the environment first and do let me know if need any help
+
+### followup review
+> setup environment 
+- linux install from https://realpython.com/installing-python/
