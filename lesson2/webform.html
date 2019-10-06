@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Webform Lesson2</title>
+     <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+     <div class="container">
+          <center>
+               <h2>Contact Us</h2>
+          </center>
+     </div>
+     <div class="container">
+          <br>
+          <div class="row align-items-center justify-content-center">
+               <div class="col-md-4">
+                    <form action="" method="post" role="form">
+                         {{ form.csrf }}
+                         <div class="form-group">
+                              <label for="name">name</label>
+                              <input type="text" id="surname" class="form-control" name="name" placeholder="name?">
+                              <br>
+                              <lable for ="surname">Surname</lable>
+                              <input type="text" id="email" class="form-control"><br>
+                              <lable for="email">Email:</lable>
+                              <input type="text" id="email" class="form-control" name="email" placeholder="Your email address.">
+                              <label for="password">Password:</label>
+                              <input type="text" id="password" class="form-control" name="password" placeholder="enter a password">
+                         </div>
+                         <br>
+                         <center><button class="btn btn-success">submit</button></center>
+                    </form>
+                    <br>
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+        {% for message in messages %}
+            {% if "Error" not in message[1]: %}
+                <div class="alert alert-info">
+                <strong>Success! </strong> {{ message[1] }}
+                </div>
+            {% endif %}
+            {% if "Error" in message[1]: %}
+                <div class="alert alert-danger">
+                <strong>Error: </strong> {{ message[1] }}
+                </div>
+            {% endif %}
+        {% endfor %}
+            {% endif %}
+        {% endwith %}
+               </div>
+               <br>
+          </div>
+          <div class="col-md-6 col-md-offset-4">
+						
+                    <!-- star ratings using input psuedo selectors -->
+                    <form id="rating"
+                              method="post"
+                              action-xhr="https://amp.dev/documentation/examples/interactivity-dynamic-content/star_rating/set"
+                              target="_blank">
+                              <fieldset class="rating">
+                              <input name="rating"
+                                   type="radio"
+                                   id="rating5"
+                                   value="5"
+                                   on="change:rating.submit">
+                              <label for="rating5"
+                                   title="5 stars">☆</label>
+
+                              <input name="rating"
+                                   type="radio"
+                                   id="rating4"
+                                   value="4"
+                                   on="change:rating.submit">
+                              <label for="rating4"
+                                   title="4 stars">☆</label>
+
+                              <input name="rating"
+                                   type="radio"
+                                   id="rating3"
+                                   value="3"
+                                   on="change:rating.submit">
+                              <label for="rating3"
+                                   title="3 stars">☆</label>
+
+                              <input name="rating"
+                                   type="radio"
+                                   id="rating2"
+                                   value="2"
+                                   on="change:rating.submit"
+                                   checked="checked">
+                              <label for="rating2"
+                                   title="2 stars">☆</label>
+
+                              <input name="rating"
+                                   type="radio"
+                                   id="rating1"
+                                   value="1"
+                                   on="change:rating.submit">
+                              <label for="rating1"
+                                   title="1 stars">☆</label> RATEME
+                              </fieldset>
+                              <div submit-success>
+                              <template type="amp-mustache">
+                                   <p>Thanks for rating {{rating}} star(s)!</p>
+                              </template>
+                              </div>
+                              <div submit-error>
+                              <template type="amp-mustache">
+                                   Looks like something went wrong. Please try to rate again. {{error}}
+                              </template>
+                              </div>
+                    </form>
+                    </div>
+     </div>
+     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+		<script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+</body>
+</html>

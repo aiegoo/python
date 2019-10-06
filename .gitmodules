@@ -1,0 +1,3 @@
+[submodule "soldesk/--depth"]
+	path = soldesk/--depth
+	url = https://github.com/aiegoo/soldesk10
