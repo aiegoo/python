@@ -1,3 +1,6 @@
 [submodule "soldesk/--depth"]
 	path = soldesk/--depth
 	url = https://github.com/aiegoo/soldesk10
+[submodule "soldesk/resume.wiki"]
+	path = soldesk/resume.wiki
+	url = https://github.com/aiegoo/resume.wiki.git
